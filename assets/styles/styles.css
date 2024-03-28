@@ -1,0 +1,80 @@
+/* Settings */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Components */
+
+.glass {
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header {
+  padding: 20px;
+  height: 100vh;
+  background: url("../images/background.png");
+
+  color: #fff;
+}
+
+.button {
+    text-transform: uppercase;
+    padding: 10px 16px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 200;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #d4d4d4;
+}
+
+/* Navigation */
+.navigation__list {
+  margin: 0;
+  padding: 20px 0;
+
+  width: fit-content;
+
+  list-style: none;
+}
+
+.navigation__list-item {
+  display: inline;
+  padding: 20px;
+}
+
+.navigation__list-item a {
+  color: #fff;
+
+  text-decoration: none;
+}
+
+/* Header */
+.header-info {
+    text-align: center;
+}
+
+.header-info__title {
+    font-weight: 200;
+    font-size: 48px;
+}
+
+.header-info__description {
+    font-weight: 200;
+}
