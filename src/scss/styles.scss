@@ -130,6 +130,7 @@ header {
   font-weight: 200;
   font-size: 12px;
   color: $button-font-color;
+  background-color: $font-color;
 
   cursor: pointer;
 
@@ -264,6 +265,17 @@ header {
 /* Skills */
 .skills .card {
   width: 50%;
+}
+
+// Form
+.contact-form {
+  padding: 16px;
+  max-width: 620px;
+  margin: 0 auto;
+
+  &__button {
+    width: 100%;
+  }
 }
 
 @import "./medias.scss";
