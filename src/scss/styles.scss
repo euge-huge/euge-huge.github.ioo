@@ -15,12 +15,66 @@ body {
 
 /* Components */
 .glass {
-  background: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card {
+  padding: 25px;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    color: $font-color;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &-item {
+      display: flex;
+      padding: 7px 12px;
+      color: $font-color;
+
+      &-icon {
+        margin-right: 24px;
+      }
+
+      &_percent {
+        justify-content: space-between;
+      }
+
+      &-percent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $dark-background;
+        border-radius: 16px;
+        z-index: -1;
+
+        &_100 {
+          width: 100%;
+        }
+
+        &_90 {
+          width: 90%;
+        }
+
+        &_60 {
+          width: 60%;
+        }
+      }
+    }
+  }
 }
 
 // Header example
@@ -141,6 +195,10 @@ header {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+
+  &__title {
+    text-align: center;
+  }
 }
 
 .header-bottom .button {
@@ -187,6 +245,8 @@ header {
 }
 
 .section__content {
+  margin: 0 auto;
+  max-width: 1240px;
   display: flex;
   gap: 32px;
 }
@@ -201,25 +261,9 @@ header {
   flex-grow: 1;
 }
 
-/* Ex */
-.section__grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 2fr 2fr 1fr;
-}
-
-.section__grid-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #FFFFFF;
-  color: $font-color;
-  border: 1px green solid;
-}
-
-.section__grid-item:first-child {
-  grid-column: 1 / 3;
+/* Skills */
+.skills .card {
+  width: 50%;
 }
 
 @import "./medias.scss";
