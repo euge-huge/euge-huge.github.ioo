@@ -137,6 +137,11 @@ header {
   &:hover {
     background-color: #d4d4d4;
   }
+
+  &_dark {
+    background-color: #000;
+    color: #d4d4d4;
+  }
 }
 
 /* Navigation */
@@ -276,6 +281,24 @@ header {
   &__button {
     width: 100%;
   }
+}
+
+.todo-list {
+  list-style: none;
+  
+  &__item {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+  }
+}
+
+#todo-description {
+  display: none;
+}
+
+.active {
+  display: block;
 }
 
 @import "./medias.scss";
