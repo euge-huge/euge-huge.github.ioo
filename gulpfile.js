@@ -43,7 +43,7 @@ function buildSass() {
 // Таск компиляции и сборки JavaScript файлов
 function buildJs() {
     return src(PATHS.js)
-        .pipe(concat('bundle.js'))
+        // .pipe(concat('bundle.js'))
         .pipe(uglify())
         .pipe(dest(`${PATHS.src}/js`))
         .pipe(dest(`${PATHS.dist}/js`))
