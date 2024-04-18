@@ -38,8 +38,20 @@
                     </a>
                 </li>
                 <li class="navigation__list-item">
+                    <a href="#contacts">
+                        Связаться
+                    </a>
+                </li>
+
+                <li class="navigation__list-item">
                     <a href="./pages/todos.html">
                         Мои дела
+                    </a>
+                </li>
+
+                <li class="navigation__list-item">
+                    <a href="./pages/weather.html">
+                        Погода
                     </a>
                 </li>
             </ul>
@@ -71,7 +83,7 @@
 
                 <article class="glass about__card">
                     <p>
-                        
+
                     <h3 id="age">Возраст:</h3>
 
                     <span class="red-text">
@@ -193,24 +205,21 @@
             </div>
         </section>
 
-        <section class="section contacts">
+        <section id="contacts" class="section contacts">
             <h4 class="section__title">Связаться со мной</h4>
 
             <div class="contact-form glass">
                 <form id="contacts-form">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Введите email:</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Введите email:</label>
-                        <input type="email" name="email2" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Опишите свою проблему подробнее:</label>
-                        <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="12"></textarea>
+                        <textarea class="form-control" name="message" id="exampleFormControlTextarea1"
+                            rows="12"></textarea>
                     </div>
 
                     <button type="submit" class="button contact-form__button">Отправить</button>

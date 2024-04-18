@@ -15,7 +15,12 @@ const appendLiElement = (todo) => {
   liElement.innerText = todo.text;
   liElement.id = todo.id;
 
-  liElement.classList.add("todo-list__item");
+  liElement.classList.add(
+    "list-group-item",
+    "d-flex",
+    "align-items-center",
+    "justify-content-between"
+  );
 
   const deleteElement = document.createElement("button");
 
@@ -44,6 +49,11 @@ const appendLiElement = (todo) => {
 const createTodo = () => {
   const text = createInput.value;
 
+  // обработка, чтобы не добавлять пустые дела
+  if (!text) {
+    return;
+  }
+
   const newTodo = {
     id: todos.length,
     text: text,
@@ -64,8 +74,8 @@ if (todos && todos.length > 0) {
 
 createButton.addEventListener("click", createTodo);
 
-loadButton.addEventListener("click", async () => {
-  fetch("https://jsonplaceholder.typicode.com/todos/" + todos.length)
+loadButton.addEventListener("click", () => {
+  fetch("https://jsonplaceholder.typicode.com/todos/" + (todos.length + 1))
     .then((response) => response.json())
     .then((json) => {
       const newTodo = {
@@ -78,9 +88,32 @@ loadButton.addEventListener("click", async () => {
       todos.push(newTodo);
 
       localStorage.setItem("todos", JSON.stringify(todos));
-    }).catch((err) => {
-        console.log(err);
-
-        alert("Не удалось загрузить туду! :(")
     });
 });
+
+// Test
+const testForm = document.getElementById("test");
+
+testForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  let data = Array.from(event.target.elements).map((element) => {
+    const atr = element.getAttribute("aria-true");
+
+    return {
+      name: element.name,
+      isTrue: atr == "true",
+      value: element.checked,
+    };
+  });
+
+  const isTestRight = data.filter(answer => answer.isTrue).every(answer => answer.value == true);
+
+  if (isTestRight) {
+    alert("Все верно!")
+  } else {
+    alert("Есть ошибки!")
+
+    const btns = document.querySelector(".radio-btn");
+  }
+})
