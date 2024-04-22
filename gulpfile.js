@@ -8,6 +8,7 @@ const browserSync = require('browser-sync').create();
 const clean = require('gulp-clean');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const ts = require("gulp-typescript");
 
 const SRC = "src";
 
@@ -16,6 +17,7 @@ const PATHS = {
     dist: 'dist',
     scss: `${SRC}/scss/**/*.scss`,
     js: `${SRC}/scripts/**/*.js`,
+    ts: `${SRC}/scripts/**/*.ts`,
     html: `${SRC}/**/*.html`,
     images: `${SRC}/assets/**/*.*`
 };
@@ -43,11 +45,25 @@ function buildSass() {
 // Таск компиляции и сборки JavaScript файлов
 function buildJs() {
     return src(PATHS.js)
-        // .pipe(concat('bundle.js'))
+        .pipe(concat('bundle.js'))
         .pipe(uglify())
         .pipe(dest(`${PATHS.src}/js`))
         .pipe(dest(`${PATHS.dist}/js`))
         .pipe(browserSync.stream());
+}
+
+// Таск компиляции TypeScript в JavaScript
+function buildTs() {
+  return src(PATHS.ts)
+    .pipe(
+      ts({
+        target: "ES5",
+        module: "CommonJS",
+      })
+    )
+    .pipe(dest(`${PATHS.src}/js`))
+    .pipe(dest(`${PATHS.dist}/js`))
+    .pipe(browserSync.stream());
 }
 
 // Таск работы с html файлами
@@ -69,9 +85,10 @@ function cleanDist() {
 
 // Таск отслеживания изменения файлов
 function serve() {
-    watch(PATHS.scss, buildSass);
-    watch(PATHS.html, buildHtml);
-    watch(PATHS.js, buildJs);
+  watch(PATHS.scss, buildSass);
+  watch(PATHS.html, buildHtml);
+  watch(PATHS.js, buildJs);
+  watch(PATHS.ts, buildTs);
 }
 
 // Создание дев-сервера
@@ -82,5 +99,5 @@ function createDevServer() {
     })
 }
 
-exports.build = series(cleanDist, buildSass, buildJs, buildHtml, copy);
-exports.default = series(buildSass, buildJs, parallel(createDevServer, serve));
+exports.build = series(cleanDist, buildSass, buildJs, buildTs, buildHtml, copy);
+exports.default = series(buildSass, buildJs, buildTs, parallel(createDevServer, serve));
