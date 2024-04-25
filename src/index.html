@@ -81,13 +81,81 @@
             </p>
 
             <button class="button">
-                ниже
+                <a href="#about-me">ниже</a>
             </button>
         </div>
     </header>
 
     <main>
-        <section class="section about">
+
+        <section id="contacts" class="section contacts">
+            <div class="container">
+                <h4 class="section__title">Связаться со мной</h4>
+
+                <div id="tabs-section">
+                    <nav>
+                        <ul>
+                            <li class="tabs-link">
+                                Вкладка 1
+                            </li>
+
+                            <li class="tabs-link">
+                                Вкладка 2
+                            </li>
+
+                            <li class="tabs-link">
+                                Вкладка 3
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="tabs tabs_active">
+                        <div class="tabs__inner">
+                            <div class="tabs__item">
+                                <div class="tabs__description">
+                                    <div class="tabs__title">Какая то услуга</div>
+                                    <div class="tabs__text">Описание услуги</div>
+                                </div>
+                                <div class="tabs__coast">1200 ₽</div>
+                            </div>
+                            <div class="tabs__item">
+                                <div class="tabs__description">
+                                    <div class="tabs__title">Какая то услуга #2</div>
+                                    <div class="tabs__text">Описание</div>
+                                </div>
+                                <div class="tabs__coast">800 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs ">
+                        <div class="tabs__inner">
+                            <div class="tabs__item">
+                                <div class="tabs__description">
+                                    <div class="tabs__title">Lorem, ipsum.</div>
+                                    <div class="tabs__text">Lorem.</div>
+                                </div>
+                                <div class="tabs__coast">1200 ₽</div>
+                            </div>
+                            <div class="tabs__item">
+                                <div class="tabs__description">
+                                    <div class="tabs__title">Lorem, ipsum.</div>
+                                    <div class="tabs__text">Lorem.</div>
+                                </div>
+                                <div class="tabs__coast">1200 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs ">
+                        Новый другой контент!!!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-me" class="section about">
             <h4 class="section__title">Обо мне</h4>
 
             <div class="section__content about__content">
@@ -218,6 +286,73 @@
         </section>
 
         <section id="contacts" class="section contacts">
+            <div class="container">
+                <h4 class="section__title">Связаться со мной</h4>
+
+                <div id="contacts-tabs">
+                    <nav>
+                        <ul>
+                            <li class="tabs-link">
+                                Вкладка 1
+                            </li>
+
+                            <li class="tabs-link">
+                                Вкладка 2
+                            </li>
+
+                            <li class="tabs-link">
+                                Вкладка 3
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="tabs tabs_active">
+                        <div class="tabs__inner">
+                            <div class="tabs__item">
+                                <div class="tabs__description">
+                                    <div class="tabs__title">Какая то услуга</div>
+                                    <div class="tabs__text">Описание услуги</div>
+                                </div>
+                                <div class="tabs__coast">1200 ₽</div>
+                            </div>
+                            <div class="tabs__item">
+                                <div class="tabs__description">
+                                    <div class="tabs__title">Какая то услуга #2</div>
+                                    <div class="tabs__text">Описание</div>
+                                </div>
+                                <div class="tabs__coast">800 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs ">
+                        <div class="tabs__inner">
+                            <div class="tabs__item">
+                                <div class="tabs__description">
+                                    <div class="tabs__title">Lorem, ipsum.</div>
+                                    <div class="tabs__text">Lorem.</div>
+                                </div>
+                                <div class="tabs__coast">1200 ₽</div>
+                            </div>
+                            <div class="tabs__item">
+                                <div class="tabs__description">
+                                    <div class="tabs__title">Lorem, ipsum.</div>
+                                    <div class="tabs__text">Lorem.</div>
+                                </div>
+                                <div class="tabs__coast">1200 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs ">
+                        Новый другой контент!!!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="section contacts">
             <h4 class="section__title">Связаться со мной</h4>
 
             <div class="contact-form glass">
@@ -249,6 +384,7 @@
 
     <!-- <script src="./js/bundle.js"></script> -->
     <script src="./js/type.js"></script>
+    <script src="./js/tabs.js"></script>
 </body>
 
 </html>
